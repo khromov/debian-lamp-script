@@ -17,13 +17,15 @@ apt-get install htop vim -y
 apt-get install mysql-server mysql-client apache2 php5 php5-cli libapache2-mod-php5 php5-mysql php5-curl php5-gd php-pear php5-imagick php5-mcrypt php5-memcache php5-mhash php5-sqlite php5-xmlrpc php5-xsl php5-json php5-dev libpcre3-dev make sed -y
 
 #Zend OpCache and APCu
-printf "\n" | pecl install ZendOpcache-beta
+#printf "\n" | pecl install ZendOpcache-beta
 printf "\n" | pecl install apcu-beta
 
 #Finding absolute path to opcache.so location on Debian
-OPCODE_EXTENSION_VAR=$(find / -name opcache.so)
+#OPCODE_EXTENSION_VAR=$(find / -name opcache.so)
 
-sed -i "2i\zend_extension=$OPCODE_EXTENSION_VAR\nextension=apcu.so" /etc/php5/apache2/php.ini
+#sed -i "2i\zend_extension=$OPCODE_EXTENSION_VAR\nextension=apcu.so" /etc/php5/apache2/php.ini
+
+sed -i "2i\extension=apcu.so" /etc/php5/apache2/php.ini
 sed -i "4i\opcache.max_accelerated_files=30000" /etc/php5/apache2/php.ini
 sed -i "5i\opcache.memory_consumption=160" /etc/php5/apache2/php.ini
 sed -i "6i\opcache.revalidate_freq=0" /etc/php5/apache2/php.ini
