@@ -14,11 +14,12 @@ debconf-set-selections <<< "mysql-server mysql-server/root_password_again passwo
 apt-get install htop vim -y
 
 #Main install
-apt-get install mysql-server mysql-client apache2 php5 php5-cli libapache2-mod-php5 php5-mysql php5-curl php5-gd php-pear php5-imagick php5-mcrypt php5-memcache php5-mhash php5-sqlite php5-xmlrpc php5-xsl php5-json php5-dev libpcre3-dev make sed -y
+apt-get install mysql-server mysql-client apache2 php5 php5-cli libapache2-mod-php5 php5-mysql php5-curl php5-gd php-pear php5-imagick php5-mcrypt php5-mhash php5-sqlite php5-xmlrpc php5-xsl php5-json php5-dev libpcre3-dev make sed -y
 
 #Zend OpCache and APCu
 #printf "\n" | pecl install ZendOpcache-beta
 printf "\n" | pecl install apcu-beta
+printf "\n" | pecl install memcached
 
 #Finding absolute path to opcache.so location on Debian
 #OPCODE_EXTENSION_VAR=$(find / -name opcache.so)
