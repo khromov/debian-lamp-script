@@ -33,7 +33,7 @@ sed -i "6i\opcache.revalidate_freq=0" /etc/php5/apache2/php.ini
 service apache2 restart
 
 #Create info file
-echo "<?php phpinfo();" > /var/www/info.php
+echo "<?php phpinfo();" > /var/www/html/info.php
 
 echo "---- Installation completed ----"
 echo "Your PHP Version is:"
