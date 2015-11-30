@@ -18,7 +18,7 @@ apt-get install mysql-server mysql-client apache2 php5 php5-cli libapache2-mod-p
 
 #Zend OpCache and APCu
 #printf "\n" | pecl install ZendOpcache-beta
-printf "\n" | pecl install apcu-beta
+printf "\n" | pecl install apcu
 
 #Finding absolute path to opcache.so location on Debian
 #OPCODE_EXTENSION_VAR=$(find / -name opcache.so)
